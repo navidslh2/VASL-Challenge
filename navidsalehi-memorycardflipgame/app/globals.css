@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Vazir";
+  font-style: normal;
+  src: url("/font/Vazirmatn-Regular.woff2") format("woff2");
+}
+
+:root {
+  font-family: "Vazir";
+}
+
+
+body {
+  background: #ffffff ;
+  color: #171717;
+  font-family: "Vazir";
+}
