@@ -8,7 +8,7 @@ import { FaTelegram } from "react-icons/fa";
 
 export const headerData = [
     {id:1, name:'خانه', href:'/' },
-    {id:2, name:"بازی مموری کارت", href:''},
+    {id:2, name:"بازی مموری کارت", href:'/memorycard'},
     {id:3, name:"آنلاین شاپ", href:'https://navidsalehi-cv.ir/'}
     ]
 
