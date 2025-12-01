@@ -18,3 +18,14 @@ export const socialMediaIcon =[
     {id:3,icon:<FaLinkedin /> , tooltip:'لینک دین',href:'https://www.linkedin.com/in/navid-salehi-3b4a57341', className:'text-blue-600'},
     {id:4,icon:<FaTelegram /> , tooltip:'تلگرام',href:'https://t.me/navidslh', className:'text-blue-400'},
 ]
+
+export const card = [
+    {id:1 , image:'css.jpeg'},
+    {id:2 , image:'html.png'},
+    {id:3 , image:'tailwind.png'},
+    {id:4 , image:'python.jpeg'},
+    {id:5 , image:'next.png'},
+    {id:6 , image:'react.png'},
+    {id:7 , image:'javascript.jpg'},
+    {id:8 , image:'typescript.png'},
+]
