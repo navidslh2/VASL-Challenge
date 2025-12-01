@@ -12,7 +12,13 @@
 
 
 body {
-  background: #ffffff ;
-  color: #171717;
+  background-color: #2d3748 ;
+  color: white;
   font-family: "Vazir";
+}
+
+@layer base {
+  .hoverEffect {
+    @apply transition-all duration-300 ease-in-out;
+  }
 }
