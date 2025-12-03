@@ -1,4 +1,4 @@
-import { gridFunction } from "@/lib/functions";
+import { createList, gridFunction } from "@/lib/functions";
 import Card from "./Card";
 
 interface Props {
@@ -6,17 +6,17 @@ interface Props {
 }
 
 
-
 const Cards = ({ size }: Props) => {
   const gameSize = Number(size.split("*")[0]);
   const imageNumber = gameSize ** 2;
-  let gridCols = gridFunction(gameSize)
+  const gridCols = gridFunction(gameSize);
+  const idList = createList(imageNumber)
 
   return (
     <div className={` pt-30 grid ${gridCols} gap-2`}>
-      {[...Array(imageNumber)].map((_, index) => (
+      {idList.map((id, index) => (
         <div className="col-span-1" key={index}>
-          <Card />
+          <Card imageId={id} />
         </div>
       ))}
     </div>
