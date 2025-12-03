@@ -1,16 +1,19 @@
-'use client'
 import Cards from '@/component/card/Cards'
-import { useParams } from 'next/navigation'
+import { use } from 'react'
 
-const GamePage = () => {
-    const paramas = useParams()
-    const size = paramas?.size ?? '8'
-    console.log(paramas) 
+
+interface Props {
+  params:Promise<{size:string}>
+}
+export default function GamePage ({params}:Props) {
+    const {size} = use(params)  
+
   return (
     <div>
-      <Cards size={size}/>
+    <Cards size={size} />
     </div>
   )
 }
 
-export default GamePage
+
+
