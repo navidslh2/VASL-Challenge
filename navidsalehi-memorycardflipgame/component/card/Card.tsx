@@ -1,19 +1,35 @@
-import { card } from "@/lib/data"
-import Image from "next/image"
-import Cards from "./Cards"
-
+"use client";
+import { card } from "@/lib/data";
+import { setImage } from "@/lib/functions";
+import Image from "next/image";
+import { useState } from "react";
 
 interface Props {
-  imageId:number
-  cardStyle: string
+  imageId: number;
+  cardStyle: string;
+  changeّImageHandler:(imageId:number, index:number)=> void
+  firstImage:{imageId:number, index: number}| null
+  secondImage:{imageId:number, index: number}| null
+  index: number
+  completeList: number[]
 }
 
-const Card = ({imageId, cardStyle}:Props) => {
+
+const Card = ({ imageId, cardStyle, changeّImageHandler, firstImage, index, secondImage, completeList }: Props) => {
+  let imageUrl = setImage(completeList, index, imageId, firstImage, secondImage)
+  const isComplete = completeList.indexOf(index) >=0
+ 
   return (
-    <div className={`relative ${cardStyle}`}>
-      <Image src={`/images/${card[imageId-1].image}`} fill alt={card[imageId-1].image} className="object-contain"/>
+    <div className={`relative ${cardStyle} ${!isComplete? "cursor-pointer" : ""} `}>
+      <Image
+        src={`/images/${imageUrl}`}
+        fill
+        alt={card[imageId].image}
+        className="object-contain"
+        onClick={!isComplete? () => changeّImageHandler(imageId, index): undefined}
+      />
     </div>
-  )
-}
+  );
+};
 
-export default Card
+export default Card;

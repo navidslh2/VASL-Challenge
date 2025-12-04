@@ -1,3 +1,5 @@
+import { card } from "./data";
+
 export const gridFunction = (gameSize: Number) => {
   let gridStyle
   let cardsStyle
@@ -32,3 +34,13 @@ export const createList = (imageNumber: number) => {
   idList.sort((a, b) => (Math.random() < 0.5 ? -1 : 1));
   return idList
 };
+
+export const setImage =(completeList:number[], index:number, imageId:number, firstImage:{imageId:number, index: number}| null, secondImage:{imageId:number, index: number}| null )=>{
+  if(completeList.indexOf(index) >=0){
+    return card[imageId].image
+  }else if(firstImage && firstImage.index === index || secondImage && secondImage.index === index){
+    return card[imageId].image
+  }else{
+     return "empty.jpg"
+  }
+}
