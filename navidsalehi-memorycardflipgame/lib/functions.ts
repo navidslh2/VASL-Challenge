@@ -1,12 +1,25 @@
 export const gridFunction = (gameSize: Number) => {
+  let gridStyle
+  let cardsStyle
+  let cardStyle
   switch (gameSize) {
     case 4:
-      return "grid-cols-4";
+      gridStyle = "grid-cols-4";
+      cardsStyle = "w-[500px] sm:w-[500px] md:[850px] gap-1 md:gap-3 xl:gap-5"
+      cardStyle = "w-18 h-18 sm:w-25 sm:h-25 md:w-35 md:h-35"
+      break
     case 8:
-      return "grid-cols-8";
+      gridStyle = "grid-cols-8";
+       cardsStyle = "w-[500px] sm:w-[700px] md:[850px] gap-0.5"
+      cardStyle = "w-12 h-12 sm:w-17 sm:h-17 md:w-20 md:h-20 "
+      break
     case 16:
-      return "grid-cols-16";
+      gridStyle = "grid-cols-16";
+      cardsStyle = "w-[550px] sm:w-[600px] md:[850px] gap-1"
+      cardStyle = "w-5 h-5 sm:w-9.5 sm:h-9.5 md:w-11 md:h-11"
+      break
   }
+  return {gridStyle, cardStyle, cardsStyle}
 };
 
 export const createList = (imageNumber: number) => {

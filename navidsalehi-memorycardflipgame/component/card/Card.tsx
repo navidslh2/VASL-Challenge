@@ -5,12 +5,13 @@ import Cards from "./Cards"
 
 interface Props {
   imageId:number
+  cardStyle: string
 }
 
-const Card = ({imageId}:Props) => {
+const Card = ({imageId, cardStyle}:Props) => {
   return (
-    <div>
-      <Image src={`/images/${card[imageId-1].image}`} width={50} height={50} alt="id"/>
+    <div className={`relative ${cardStyle}`}>
+      <Image src={`/images/${card[imageId-1].image}`} fill alt={card[imageId-1].image} className="object-contain"/>
     </div>
   )
 }
