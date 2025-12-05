@@ -1,8 +1,6 @@
-"use client";
 import { card } from "@/lib/data";
 import { setImage } from "@/lib/functions";
 import Image from "next/image";
-import { useState } from "react";
 
 interface Props {
   imageId: number;

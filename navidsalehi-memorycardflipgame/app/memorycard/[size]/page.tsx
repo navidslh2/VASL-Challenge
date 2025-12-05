@@ -1,5 +1,7 @@
+'use client'
 import Cards from '@/component/card/Cards'
-import { use } from 'react'
+import GameHeader from '@/component/gameHeader/GameHeader'
+import { use, useState } from 'react'
 
 
 interface Props {
@@ -7,10 +9,11 @@ interface Props {
 }
 export default function GamePage ({params}:Props) {
     const {size} = use(params)  
-
+    const [numberOfMove, setNumberOfMove] = useState(0)
   return (
     <div>
-    <Cards size={size} />
+    <GameHeader numberOfMove={numberOfMove}/>
+    <Cards size={size} setNumberOfMove={setNumberOfMove} />
     </div>
   )
 }

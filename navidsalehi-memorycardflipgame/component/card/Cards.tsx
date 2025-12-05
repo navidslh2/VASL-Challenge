@@ -2,13 +2,13 @@
 import { createList, gridFunction } from "@/lib/functions";
 import Card from "./Card";
 import { useState } from "react";
-import { card } from "@/lib/data";
 
 interface Props {
   size: string;
+  setNumberOfMove:React.Dispatch<React.SetStateAction<number>>
 }
 
-const Cards = ({ size }: Props) => {
+const Cards = ({ size, setNumberOfMove }: Props) => {
   const [firstImage, setFirstImage] = useState<{imageId:number, index: number} | null>(null);
   const [secondImage, setSecondImage] = useState<{imageId:number, index: number}  | null>(null);
   const gameSize = Number(size.split("*")[0]);
@@ -18,6 +18,7 @@ const Cards = ({ size }: Props) => {
   const [completeList, setCompleteList] = useState<number[]>([])
 
   const changeّImageHandler = (imageId: number, index:number) => {
+    setNumberOfMove(prev => prev + 1)
     if(firstImage ===null) {setFirstImage({imageId:imageId, index: index}) ; return }
 
     setSecondImage({imageId:imageId, index: index})
@@ -38,7 +39,7 @@ const Cards = ({ size }: Props) => {
   
   return ( 
     <div
-      className={` pt-30 px-1  grid ${gridStyle}   ${cardsStyle} aspect-square m-auto`}
+      className={` pt-10 px-1  grid ${gridStyle}   ${cardsStyle} aspect-square m-auto`}
     >
       {cardStyle  &&
         idList.map((id, index) => (
