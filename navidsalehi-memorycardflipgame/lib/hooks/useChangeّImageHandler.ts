@@ -17,7 +17,7 @@ export const useChangeّImageHandler = (
     index: number;
   } | null>(null);
   const [completeList, setCompleteList] = useState<number[]>([]);
-  const [isFinish, setIsFinish] = useState(false);
+  const [isFinish, setIsFinish] = useState(true);
   const [duration, setDuration] = useState(0);
   const [bestScore, setBestScore] = useState<BestScore[]>(()=>{
     const local = localStorage.getItem('score')
@@ -86,5 +86,6 @@ export const useChangeّImageHandler = (
     isFinish,
     duration,
     bestScore,
+    setIsFinish
   };
 };
