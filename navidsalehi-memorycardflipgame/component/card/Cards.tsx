@@ -1,7 +1,6 @@
-"use client";
-import { createList, gridFunction } from "@/lib/functions";
+import { gridFunction } from "@/lib/functions";
 import Card from "./Card";
-import { useState } from "react";
+
 
 interface Props {
   gameSize: number

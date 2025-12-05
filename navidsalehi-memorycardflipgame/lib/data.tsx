@@ -30,3 +30,4 @@ export const card = [
     {id:8 , image:'typescript.png'},
     
 ]
+

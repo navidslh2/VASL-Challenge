@@ -14,12 +14,12 @@ export default function GamePage ({params}:Props) {
     const gameSize = Number(size.split("*")[0]);
     const imageNumber = gameSize ** 2;
     const [idList] = useState(createList(imageNumber))
-    const {numberOfMove, firstImage, secondImage, completeList, changeّImageHandler, duration} = useChangeّImageHandler(imageNumber)
+    const {numberOfMove, firstImage, secondImage, completeList, changeّImageHandler, duration, bestScore} = useChangeّImageHandler(imageNumber,gameSize)
 
 
   return (
     <div>
-    <GameHeader numberOfMove={numberOfMove}  duration={duration} />
+    <GameHeader numberOfMove={numberOfMove}  duration={duration} bestScore={bestScore} gameSize={gameSize} />
     <Cards gameSize={gameSize} idList={idList} changeّImageHandler={changeّImageHandler} firstImage={firstImage} secondImage={secondImage} completeList={completeList}/>
     </div>
   )

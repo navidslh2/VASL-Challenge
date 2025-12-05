@@ -1,4 +1,5 @@
 import { card } from "./data";
+import type { BestScore } from "./type";
 
 export const gridFunction = (gameSize: Number) => {
   let gridStyle
@@ -43,4 +44,10 @@ export const setImage =(completeList:number[], index:number, imageId:number, fir
   }else{
      return "empty.jpg"
   }
+}
+
+export const bestScoreHnadler = (bestScore:BestScore[],gameSize:number) =>{
+  const sizeFilter = bestScore.filter(score => score.gameSize === gameSize)
+  if(sizeFilter.length === 0) return 'امتیازی ثبت نشده است'
+  return Math.min(...sizeFilter.map(sc => sc.numberOfMove))
 }
